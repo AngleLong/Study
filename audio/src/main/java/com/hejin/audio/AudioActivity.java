@@ -6,7 +6,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.hejin.study.R;
-
+/**
+ * 欠缺的内容:
+ * 1.文件的读写操作
+ * 2.关于文件的操作
+ * 3.相应的博客
+ * 4.异常的处理
+ * */
 public class AudioActivity extends AppCompatActivity {
 
     @Override
