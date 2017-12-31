@@ -5,4 +5,5 @@
     <string name="audio_byte">字节流模式</string>
     <string name="startRecord">开始录音</string>
     <string name="recordHint">这里是展示录音的</string>
+    <string name="playVideo">播放相应的录音</string>
 </resources>
