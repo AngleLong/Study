@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">audio</string>
+    <string name="video">关于录音问题的总结</string>
+    <string name="audio_file">文件模式</string>
+    <string name="audio_byte">字节流模式</string>
+    <string name="startRecord">开始录音</string>
+    <string name="recordHint">这里是展示录音的</string>
 </resources>

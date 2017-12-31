@@ -17,10 +17,14 @@
         <activity android:name="com.hejin.audio.AudioActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name="com.hejin.audio.FileActivity">
+        </activity>
+        <activity android:name="com.hejin.audio.ByteActivity">
+        </activity>
     </application>
-
 
 </manifest>
