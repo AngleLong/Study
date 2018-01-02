@@ -7,6 +7,4 @@ public class Hello {
     }
 
     public static native String sayHello();
-
-    public static native String haha(String hah,String string);
 }
