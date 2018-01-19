@@ -17,7 +17,7 @@ add_library( # Sets the name of the library.生成.so库的名称
              SHARED
 
              # Provides a relative path to your source file(s).生成的.c文件的位置
-             src/main/jni/Hello.c )
+             src/main/jni/hello.c )
 
 # Searches for a specified prebuilt library and stores the path as a
 # variable. Because CMake includes system libraries in the search path by

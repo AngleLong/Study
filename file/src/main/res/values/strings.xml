@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">file</string>
+    <string name="createFile">创建文件</string>
+    <string name="delFile">删除文件</string>
+</resources>

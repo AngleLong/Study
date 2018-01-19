@@ -6,13 +6,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.hejin.study.R;
+
 /**
  * 欠缺的内容:
  * 1.文件的读写操作
  * 2.关于文件的操作
  * 3.相应的博客
  * 4.异常的处理
- * */
+ * https://www.cnblogs.com/tyjsjl/p/3695122.html
+ */
 public class AudioActivity extends AppCompatActivity {
 
     @Override
@@ -37,5 +39,14 @@ public class AudioActivity extends AppCompatActivity {
      */
     public void btnByte(View view) {
         startActivity(new Intent(this, ByteActivity.class));
+    }
+
+    /**
+     * author :  贺金龙
+     * create time : 2018/1/17 11:31
+     * description : 视频相关的操作
+     */
+    public void btnVideo(View view) {
+        startActivity(new Intent(this,VideoActivity.class));
     }
 }

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">audio</string>
+    <string name="VideoOperate">视频操作</string>
+    <string name="startVideo">开始录制</string>
+    <string name="playVideo">播放</string>
+    <string name="stopVideo">停止录制</string>
 </resources>

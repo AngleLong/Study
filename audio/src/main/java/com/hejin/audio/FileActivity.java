@@ -328,7 +328,6 @@ public class FileActivity extends AppCompatActivity implements View.OnTouchListe
         }
     }
 
-
     /**
      * author :  贺金龙
      * create time : 2017/12/31 22:44
