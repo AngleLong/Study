@@ -1,1 +1,1 @@
-include ':app', ':common', ':audio', ':ndk', ':file'
+include ':app', ':common', ':audio', ':ndk', ':file', ':service', ':download'

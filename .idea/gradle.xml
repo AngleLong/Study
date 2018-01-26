@@ -11,8 +11,10 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/audio" />
             <option value="$PROJECT_DIR$/common" />
+            <option value="$PROJECT_DIR$/download" />
             <option value="$PROJECT_DIR$/file" />
             <option value="$PROJECT_DIR$/ndk" />
+            <option value="$PROJECT_DIR$/service" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.hejin.ndk">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <application
+        android:name="debug.ServiceApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.hejin.service.ServiceActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <!--
+        1.name Service的类名称
+        2.label Service的名字
+        3.icon Service的图标
+        4.permission Service申请此Service的权限(有提供该权限的应用才能控制或链接服务)
+        5.process Service是否在一个新的进程中运行
+        6.enabled Service是否能被系统启动 (true代表可以被系统启动)
+        7.exported Service能否被其他应用程序所控制或者连接(true代表可以被其他程序连接)
+        -->
+        <service
+            android:name="com.hejin.service.GeneralService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
+        <service
+            android:name="com.hejin.service.IntentService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
+        <service
+            android:name="com.hejin.service.BindService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
+    </application>
+
+</manifest>
