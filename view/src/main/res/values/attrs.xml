@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--分段任务的自定义View-->
+    <declare-styleable name="SegmentationTaskView">
+        <!--高亮的颜色-->
+        <attr name="highColor" format="color|integer"/>
+        <!--暗色的颜色-->
+        <attr name="darkColor" format="color|integer"/>
+        <!--线段的数量-->
+        <attr name="totalSegment" format="integer"/>
+        <!--未高亮的图片-->
+        <attr name="darkRes" format="integer"/>
+        <!--高亮的图片-->
+        <attr name="highRes" format="integer"/>
+        <!--当前应该高亮的圆弧数量-->
+        <attr name="currentSegmentNum" format="integer"/>
+        <!--绘制的笔触宽度,也就是圆环的宽度-->
+        <attr name="radiusWidth" format="dimension"/>
+    </declare-styleable>
+</resources>
