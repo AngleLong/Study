@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/file" />
             <option value="$PROJECT_DIR$/ndk" />
             <option value="$PROJECT_DIR$/service" />
+            <option value="$PROJECT_DIR$/view" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

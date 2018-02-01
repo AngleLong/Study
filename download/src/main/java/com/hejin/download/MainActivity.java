@@ -1,5 +1,6 @@
 package com.hejin.download;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -8,10 +9,6 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.hejin.ndk.R;
-
-import org.litepal.crud.DataSupport;
-
-import java.util.List;
 
 /**
  * author :  贺金龙
@@ -56,13 +53,13 @@ public class MainActivity extends AppCompatActivity {
      * version :
      */
     private void initInfo() {
-//        /*创建文件的信息对象*/
-//        mFileInfo = new FileInfo(
-//                0,
-//                "https://www.baidu.com/link?url=-3zekbEWCOeN_M8Q8UWnn0VQ_vdXbQcx625V2yOp8FpSI8KdpN-bwxUu-P0W671c2b3i1nl9nBzBKFUsE9OmKhT4CNhPTzx9gcoKFz4KXHi&wd=&eqid=b28ed00f000084ec000000065a6ad135",
-//                "kugou_8.2.4.20449_setup.exe",
-//                0, 0
-//        );
+        /*创建文件的信息对象*/
+        mFileInfo = new FileInfo(
+                0,
+                "https://www.baidu.com/link?url=-3zekbEWCOeN_M8Q8UWnn0VQ_vdXbQcx625V2yOp8FpSI8KdpN-bwxUu-P0W671c2b3i1nl9nBzBKFUsE9OmKhT4CNhPTzx9gcoKFz4KXHi&wd=&eqid=b28ed00f000084ec000000065a6ad135",
+                "kugou_8.2.4.20449_setup.exe",
+                0, 0
+        );
     }
 
     /**
@@ -71,17 +68,10 @@ public class MainActivity extends AppCompatActivity {
      * description :  下载按钮的点击事件
      */
     public void downLoad(View view) {
-//        Intent intent = new Intent(this, DownloadService.class);
-//        intent.setAction(DownloadService.ACTION_START);
-//        intent.putExtra("fileInfo", mFileInfo);
-//        startService(intent);
-        /*将数据内容保存到相应的数据库中*/
-        mFileInfo = new FileInfo();
-        mFileInfo.setFileName("文件名称");
-        mFileInfo.setFinished(20);
-        mFileInfo.setLength(200);
-        mFileInfo.setUrl("这是一个URL");
-        mFileInfo.save();
+        Intent intent = new Intent(this, DownloadService.class);
+        intent.setAction(DownloadService.ACTION_START);
+        intent.putExtra("fileInfo", mFileInfo);
+        startService(intent);
     }
 
     /**
@@ -90,12 +80,19 @@ public class MainActivity extends AppCompatActivity {
      * description : 暂停下载,也就是相应的结束下载
      */
     public void pause(View view) {
-//        Intent intent = new Intent(this, DownloadService.class);
-//        intent.setAction(DownloadService.ACTION_STOP);
-//        intent.putExtra("fileInfo", mFileInfo);
-//        startService(intent);
+        Intent intent = new Intent(this, DownloadService.class);
+        intent.setAction(DownloadService.ACTION_STOP);
+        intent.putExtra("fileInfo", mFileInfo);
+        startService(intent);
+    }
 
-        List<FileInfo> fileInfos = DataSupport.select("fileName").find(FileInfo.class);
-        mTvDLProgress.setText(fileInfos.get(0).getFileName());
+
+    /**
+     * author :  贺金龙
+     * create time : 2018/1/30 16:35
+     * description : 操作相应的LitePal
+     */
+    public void litePal(View view) {
+        startActivity(new Intent(this, LitePalActivity.class));
     }
 }

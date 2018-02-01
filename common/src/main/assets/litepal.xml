@@ -4,5 +4,6 @@
     <version value="2"/>
     <list>
         <mapping class="com.hejin.download.FileInfo"/>
+        <mapping class="com.hejin.download.LitePalBean"/>
     </list>
 </litepal>

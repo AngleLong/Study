@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.IBinder;
-import android.os.Message;
 import android.util.Log;
 
 import java.io.File;
@@ -18,6 +17,9 @@ import java.net.URL;
  * author :  贺金龙
  * create time : 2018/1/26 14:47
  * description : Service实现断点续传
+ * 主要内容:
+ * 1.写入文件通过RandomAccessFile进行相应的制定位置写入
+ * 2.
  */
 public class DownloadService extends Service {
 
@@ -25,7 +27,19 @@ public class DownloadService extends Service {
     public static final String ACTION_START = "ACTION_START";//开始下载的标记
     public static final String ACTION_STOP = "ACTION_STOP";//结束下载的标记
     public static final int MSG_INIT = 0;//文件长度的消息
-
+    private Handler mHandler = new Handler(getMainLooper());
+//    private Handler mHandler = new Handler() {
+//        @Override
+//        public void handleMessage(Message msg) {
+//            super.handleMessage(msg);
+//            switch (msg.what) {
+//                case MSG_INIT:
+//                    FileInfo fileInfo = (FileInfo) msg.obj;
+//                    Log.e(TAG, "handleMessage: " + fileInfo.toString());
+//                    break;
+//            }
+//        }
+//    };
 
     public static final String DOWNLOAD_PATH = Environment.getExternalStorageDirectory().getAbsolutePath() + "/downloads/";
 
@@ -112,7 +126,14 @@ public class DownloadService extends Service {
                 raf.setLength(length);//设置长度
 
                 /*向Service传递信息*/
-                mHandler.obtainMessage(MSG_INIT, mFileInfo).sendToTarget();
+//                mHandler.obtainMessage(MSG_INIT, mFileInfo).sendToTarget();
+                mHandler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        Log.e(TAG, "handleMessage: " + mFileInfo.toString());
+                    }
+                });
+
 
             } catch (java.io.IOException e) {
                 e.printStackTrace();
@@ -126,17 +147,4 @@ public class DownloadService extends Service {
             }
         }
     }
-
-    private Handler mHandler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            switch (msg.what) {
-                case MSG_INIT:
-                    FileInfo fileInfo = (FileInfo) msg.obj;
-                    Log.e(TAG, "handleMessage: " + fileInfo.toString());
-                    break;
-            }
-        }
-    };
 }

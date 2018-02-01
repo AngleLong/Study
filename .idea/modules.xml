@@ -10,6 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/file/file.iml" filepath="$PROJECT_DIR$/file/file.iml" />
       <module fileurl="file://$PROJECT_DIR$/ndk/ndk.iml" filepath="$PROJECT_DIR$/ndk/ndk.iml" />
       <module fileurl="file://$PROJECT_DIR$/service/service.iml" filepath="$PROJECT_DIR$/service/service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/view/view.iml" filepath="$PROJECT_DIR$/view/view.iml" />
     </modules>
   </component>
 </project>
