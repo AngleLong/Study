@@ -1,8 +1,7 @@
 <resources>
     <string name="app_name">audio</string>
-    <string name="video">关于录音问题的总结</string>
-    <string name="audio_file">文件模式</string>
-    <string name="audio_byte">字节流模式</string>
-    <string name="startRecord">开始录音</string>
-    <string name="recordHint">这里是展示录音的</string>
+    <string name="VideoOperate">视频操作</string>
+    <string name="startVideo">开始录制</string>
+    <string name="playVideo">播放</string>
+    <string name="stopVideo">停止录制</string>
 </resources>

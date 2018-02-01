@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">download</string>
+    <string name="downloadProgress">下载进度</string>
+    <string name="downLoad">下载</string>
+    <string name="pause">暂停</string>
+    <string name="add">增加</string>
+    <string name="del">删除</string>
+    <string name="upData">更新</string>
+    <string name="query">查询</string>
+    <string name="litepal">如果你不懂相应的数据库操作点这里(LitePal的使用)</string>
+</resources>
