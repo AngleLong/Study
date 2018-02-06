@@ -3,7 +3,6 @@ if (isModule.toBoolean()) {
 } else {
     apply plugin: 'com.android.application'
 }
-
 android {
     compileSdkVersion 26
 
@@ -12,7 +11,15 @@ android {
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
+
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
     }
 
     sourceSets {
@@ -26,16 +33,13 @@ android {
                 manifest.srcFile 'src/main/module/AndroidManifest.xml'
             }
         }
-    }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        main {
+            jniLibs.srcDirs = ['libs']
         }
+        main { assets.srcDirs = ['src/main/assets', 'src/main/assets/'] }
     }
 }
-
 dependencies {
     compile project(':common')
+    implementation files('libs/ocr-sdk.jar')
 }

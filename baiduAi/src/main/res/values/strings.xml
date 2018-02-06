@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">baiduAi</string>
+    <string name="currency_text">通用文字识别服务</string>
+    <string name="pic">图片识别</string>
+    <string name="card">银行卡识别</string>
+    <string name="ID">身份证识别</string>
+    <string name="car">行驶证识别</string>
+    <string name="driver">驾驶证识别</string>
+    <string name="carNum">车牌识别</string>
+    <string name="businessLicence">营业执照</string>
+    <string name="bill">通用票据</string>
+</resources>
