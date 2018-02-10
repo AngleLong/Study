@@ -1,5 +1,8 @@
 package com.hejin.common;
 
+import com.hejin.common.imageloader.GlideLoader;
+import com.hejin.common.imageloader.ImageLoaderManager;
+
 import org.litepal.LitePalApplication;
 
 /**
@@ -20,5 +23,16 @@ public class BaseApp extends LitePalApplication {
     @Override
     public void onCreate() {
         super.onCreate();
+        initImageLoader();
+    }
+
+    /**
+     * author :  贺金龙
+     * create time : 2018/2/7 18:06
+     * description : 初始化相应的图片加载框架
+     */
+    private void initImageLoader() {
+        GlideLoader glideLoader = new GlideLoader(this);
+        ImageLoaderManager.getInstance().init(glideLoader);
     }
 }
