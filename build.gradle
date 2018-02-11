@@ -7,7 +7,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath "com.android.tools.build:gradle:$localGradlePluginVersion"
         
 
         // NOTE: Do not place your application dependencies here; they belong
@@ -24,4 +24,38 @@ allprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+/*这里是为了便于管理版本控制的内容部分,在整个APP中都能使用*/
+ext{
+    //localBuildToolsVersion是gradle.properties中的数据
+    buildToolsVersion = localBuildToolsVersion
+    compileSdkVersion = 27
+    minSdkVersion = 19
+    targetSdkVersion = 27
+    versionCode = 1
+    versionName = "1.0"
+    javaVersion = JavaVersion.VERSION_1_8
+    //引入包控制
+    //基础包
+    appcompatVersion = "27.0.2"
+    constraintLayoutVersion = "1.0.1"
+    //ARouter
+    arouterApiVersion = "1.2.2"
+    arouterCompilerVersion = "1.1.3"
+    //网络请求需要的
+    retrofitVersion="2.3.0"
+    converterGson="2.3.0"
+    retrofit2Rxjava2Adapter="1.0.0"
+    rxJavaVersion = "2.1.4"
+    rxAndroidVersion = "2.0.1"
+    OkHttp3Version = "3.9.0"
+    loggingInterceptor="3.9.0"
+    //litePal数据库内容
+    litePalVersion = "1.6.1"
+    //数据解析gson
+    gsonVersion = "2.8.2"
+    //图片加载glide
+    glideVersion = "4.5.0"
+    glideProcessor = "4.5.0"
 }
