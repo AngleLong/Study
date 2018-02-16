@@ -6,41 +6,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.hejin.service.ServiceActivity">
+    tools:context="com.hejin.aidldemo.GeneralActivity">
 
-    <Button
-        android:id="@+id/btn_start"
+    <EditText
+        android:id="@+id/num1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="startGeneralService"
-        android:text="开启服务"/>
+        android:hint="请输入数字"/>
 
-    <Button
-        android:id="@+id/btn_stop"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="stopGeneralService"
-        android:text="停止服务"/>
+        android:gravity="center"
+        android:text="+"
+        android:textSize="20dp"/>
 
-    <Button
-        android:id="@+id/btn_startIntent"
+    <EditText
+        android:id="@+id/num2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="startIntentService"
-        android:text="开启自关闭服务"/>
+        android:hint="请输入数字"/>
 
     <Button
-        android:id="@+id/btn_bindService"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="bindService"
-        android:text="绑定服务"/>
+        android:onClick="getContent"
+        android:text="远程计算"/>
 
-    <Button
-        android:id="@+id/btn_unBindService"
+    <TextView
+        android:id="@+id/tv_content"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="unBindService"
-        android:text="绑定服务"/>
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="相应的远程计算结果为:"/>
 
 </LinearLayout>

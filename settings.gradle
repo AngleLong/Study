@@ -1,1 +1,1 @@
-include ':app', ':common', ':audio', ':ndk', ':file', ':service', ':download', ':view', ':baiduAi'
+include ':app', ':common', ':audio', ':ndk', ':file', ':service', ':download', ':view', ':baiduAi', ':aidldemo'

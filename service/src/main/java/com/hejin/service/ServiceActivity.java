@@ -9,7 +9,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
-import com.hejin.ndk.R;
 
 /**
  * author :  贺金龙

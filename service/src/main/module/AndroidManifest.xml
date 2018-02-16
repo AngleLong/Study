@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.hejin.ndk">
+          package="com.hejin.service">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.hejin.service.ServiceActivity">
+        <activity android:name=".ServiceActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -30,17 +30,24 @@
         7.exported Service能否被其他应用程序所控制或者连接(true代表可以被其他程序连接)
         -->
         <service
-            android:name="com.hejin.service.GeneralService"
+            android:name=".GeneralService"
+            android:enabled="true"
+            android:exported="true"/>
+        <service
+            android:name=".IntentService"
+            android:enabled="true"
+            android:exported="true"/>
+        <service
+            android:name=".BindService"
+            android:enabled="true"
+            android:exported="true"/>
+        <service
+            android:name=".aidl.AidlService"
             android:enabled="true"
             android:exported="true">
         </service>
         <service
-            android:name="com.hejin.service.IntentService"
-            android:enabled="true"
-            android:exported="true">
-        </service>
-        <service
-            android:name="com.hejin.service.BindService"
+            android:name=".aidl.AidlCustomService"
             android:enabled="true"
             android:exported="true">
         </service>

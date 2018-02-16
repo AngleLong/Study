@@ -6,16 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
-import com.hejin.common.network.BaseBean;
-import com.hejin.file.net.FileRetrofitManager;
 import com.hejin.ndk.R;
 
 import java.io.File;
 import java.io.IOException;
-
-import io.reactivex.Observable;
-import io.reactivex.Observer;
-import io.reactivex.disposables.Disposable;
 
 public class FileActivity extends AppCompatActivity {
 
@@ -81,29 +75,5 @@ public class FileActivity extends AppCompatActivity {
             mFile.delete();
             Log.e(TAG, "delFile: 删除文件成功");
         }
-
-
-        Observable<BaseBean> timing = FileRetrofitManager.getInstance().getApiSever().getTiming();
-        timing.subscribe(new Observer<BaseBean>() {
-            @Override
-            public void onSubscribe(Disposable d) {
-
-            }
-
-            @Override
-            public void onNext(BaseBean baseBean) {
-
-            }
-
-            @Override
-            public void onError(Throwable e) {
-
-            }
-
-            @Override
-            public void onComplete() {
-
-            }
-        });
     }
 }
