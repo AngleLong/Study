@@ -18,9 +18,10 @@ import com.hejin.common.utils.EventBusUtils;
  * 修改时间:
  * 修改描述:
  */
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity<V extends BaseView, P extends BasePresenter<V>> extends AppCompatActivity {
 
     private Context mContext;
+    private P mPresenter;
 
 
     //------------------------生命周期方法------------------------//
@@ -30,6 +31,9 @@ public abstract class BaseActivity extends AppCompatActivity {
 
         //获取本页面的上下文
         mContext = this;
+
+        //获取相应页面传递的参数
+        getExtra();
 
         /*
          * 这里通过注解的形式将EventBus绑定到相应的内容上
@@ -42,9 +46,16 @@ public abstract class BaseActivity extends AppCompatActivity {
             EventBusUtils.register(this);
         }
 
+        //设置相应的Presenter
+        mPresenter = createPresenter();
+        if (mPresenter != null) {
+            mPresenter.attachView((V) this);
+        }
+
         //设置布局的方法
         setContentView(createContentView());
     }
+
 
     @Override
     protected void onDestroy() {
@@ -53,9 +64,24 @@ public abstract class BaseActivity extends AppCompatActivity {
         if (this.getClass().isAnnotationPresent(BindEventBus.class)) {
             EventBusUtils.unregister(this);
         }
+
+        //释放相应Presenter的资源
+        if (null != mPresenter) {
+            mPresenter.detachView();
+        }
     }
 
     //------------------------对外暴漏的方法------------------------//
+
+    /**
+     * 作者 贺金龙
+     * <p>
+     * 方法描述: 获取上个页面传递的相应参数，这个参数可以不去实现
+     * 创建时间: 2018/43 14:38
+     */
+    public void getExtra() {
+
+    }
 
 
     //------------------------必须实现的方法------------------------//
@@ -68,5 +94,11 @@ public abstract class BaseActivity extends AppCompatActivity {
      */
     public abstract int createContentView();
 
-
+    /**
+     * 作者 贺金龙
+     * <p>
+     * 方法描述: 设置相应的Presenter
+     * 创建时间: 2018/4/ 14:35
+     */
+    public abstract P createPresenter();
 }
