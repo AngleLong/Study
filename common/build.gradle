@@ -48,4 +48,6 @@ dependencies {
     compile "io.reactivex.rxjava2:rxandroid:$rootProject.rxAndroidVersion"
     /*OkHttp3*/
     compile "com.squareup.okhttp3:okhttp:$rootProject.OkHttp3Version"
+    /*EventBus*/
+    compile "org.greenrobot:eventbus:$rootProject.EventBus"
 }

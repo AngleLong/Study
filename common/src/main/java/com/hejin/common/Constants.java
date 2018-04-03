@@ -27,4 +27,14 @@ public class Constants {
          */
         String TIMING = "nba?key=09f926b1259390831a0dae5875ef4654";
     }
+
+    /**
+     * 作者 贺金龙
+     * <p>
+     * 方法描述: 这里定义EventBus的相应编码；这里应该是唯一的
+     * 创建时间: 2018/4/3 14:20
+     */
+    public interface EventBusCode {
+        /* 例: int A = 0x111111;*/
+    }
 }

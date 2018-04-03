@@ -58,4 +58,6 @@ ext{
     //图片加载glide
     glideVersion = "4.5.0"
     glideProcessor = "4.5.0"
+    //EventBus
+    EventBus = "3.1.1"
 }
